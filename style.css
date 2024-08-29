@@ -23,24 +23,24 @@ body {
 
 /* Navbar */
 
+/* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 60px;
+  padding: 0 10vw;
   background-color: var(--primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 10vw;
   z-index: 9;
 }
 
 .navbar-title {
   font-weight: 500;
   cursor: pointer;
-  user-select: none;
 }
 
 .highlight {
@@ -55,15 +55,19 @@ body {
 
 .navbar-link {
   color: black;
-  position: relative;
   padding-bottom: 5px;
+  position: relative;
   text-decoration: none;
+}
+
+.navbar-link:hover,
+.navbar-title,
+.navbar-link {
   user-select: none;
 }
 
 .navbar-link:hover {
   color: var(--secondary);
-  user-select: none;
 }
 
 .navbar-link::after {
@@ -98,9 +102,9 @@ body {
 }
 
 .home-title {
-  margin-bottom: 20px;
   font-size: 3.5rem;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .home-title .nama {
@@ -117,8 +121,8 @@ body {
 .btn {
   color: white;
   background-color: var(--secondary);
-  padding: 10px 30px;
   display: inline-block;
+  padding: 10px 30px;
   border-radius: 50px;
   text-decoration: none;
   transition: background-color .3s;
@@ -135,7 +139,6 @@ body {
 .home-background {
   position: relative;
   top: 30px;
-  left: 5px;
 }
 
 .home-image {
@@ -172,7 +175,7 @@ body {
   height: 446px;
   margin-left: 20px;
   border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, .25)
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
 }
 
 .about-description {
@@ -186,12 +189,14 @@ body {
   font-size: 2.3rem;
   font-weight: 500;
   margin-bottom: 10px;
+
 }
 
 .social {
   display: flex;
   align-items: center;
   gap: 20px;
+
 }
 
 .icon {
@@ -731,6 +736,7 @@ body {
     align-items: center;
     flex-direction: column-reverse;
     padding-bottom: 50px;
+    border: 1px solid black;
   }
 
   .home-content {
@@ -778,12 +784,12 @@ body {
 
 @media (max-width:575px) {
   html {
-    font-size: 13px
+    font-size: 12px;
   }
 
   .hamburger-menu {
     width: 25px;
-    height: 25px
+    height: 25px;
   }
 
   .home {
@@ -792,61 +798,61 @@ body {
 
   .home-image {
     width: 220px;
-    height: 308px
+    height: 308px;
   }
 
   .home .home-background {
     top: 30px;
     width: 350px;
-    height: 350px
+    height: 350px;
   }
 
   .home-title {
-    font-size: 3rem
+    font-size: 3rem;
   }
 
   .home-title .nama {
-    font-size: 4rem
+    font-size: 4rem;
   }
 
   .about-image {
     margin: 0;
     width: 200px;
-    height: 357px
+    height: 357px;
   }
 
   .skill-container {
-    width: 250px
+    width: 250px;
   }
 
   .skill-card {
-    width: 140px
+    width: 140px;
   }
 
   .skill-card svg {
     width: 80px;
-    height: 80px
+    height: 80px;
   }
 
   .project-btn {
     padding: 9px;
-    font-size: 1rem
+    font-size: 1rem;
   }
 
   .project-icon svg {
-    width: 30px
+    width: 30px;
   }
 
   .footer-container {
-    width: 70%
+    width: 70%;
   }
 
   .footer-content {
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
   }
 
   .footer-icon svg {
-    width: 15px
+    width: 15px;
   }
 }
