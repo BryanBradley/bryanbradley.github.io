@@ -23,7 +23,6 @@ body {
 
 /* Navbar */
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -91,6 +90,7 @@ body {
 .home {
   min-height: calc(100vh - 60px);
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   margin-top: 60px;
@@ -660,18 +660,7 @@ body {
     font-size: 14px;
   }
 
-  .hamburger-menu span,
-  .navbar-list {
-    position: absolute;
-    transition: .5s;
-    width: 100%;
-  }
-
-  .home-content,
-  .home-content .home-description,
-  .navbar-link {
-    text-align: center;
-  }
+  /* Hamburger Menu */
 
   .hamburger-menu {
     position: absolute;
@@ -682,9 +671,12 @@ body {
   }
 
   .hamburger-menu span {
+    width: 100%;
     height: 2px;
     background-color: black;
+    position: absolute;
     top: 30%;
+    transition: .5s;
   }
 
   .hamburger-menu span:nth-child(2) {
@@ -709,14 +701,19 @@ body {
     transform: rotate(-45deg);
   }
 
+  /* Links */
+
   .navbar-list {
+    width: 100%;
     background-color: var(--primary);
     flex-direction: column;
+    position: absolute;
     top: 60px;
     left: 0;
     padding: 0 10vw;
     opacity: 0;
     pointer-events: none;
+    transition: .5s;
   }
 
   .navbar-list.show {
@@ -725,22 +722,28 @@ body {
   }
 
   .navbar-link {
-    margin-left: auto;
-    display: block;
     height: 50px;
+    display: block;
+    margin-left: auto;
+    text-align: center;
   }
 
+  /* Home */
+
   .home {
+    flex-direction: column-reverse;
     height: fit-content;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column-reverse;
     padding-bottom: 50px;
+    overflow: hidden;
+    border: 1px solid black;
   }
 
   .home-content {
-    width: 100%;
+    width: 70%;
     min-width: 350px;
+    text-align: center;
   }
 
   .home-title {
@@ -749,6 +752,10 @@ body {
 
   .home-title .nama {
     font-size: 4.5rem;
+  }
+
+  .home-content .home-description {
+    text-align: center;
   }
 
   .home .home-background {
@@ -762,12 +769,19 @@ body {
     transform: translate(-50%, -50%);
   }
 
+  /* About */
+
   .about-me-container {
     grid-template-columns: 1fr;
   }
 
   .about-image-container {
+    border: 1px solid black;
     margin: 0 auto 20px;
+  }
+
+  .about-image {
+    margin: 0 auto;
   }
 
   .skill-container {
@@ -792,7 +806,8 @@ body {
   }
 
   .home {
-    gap: 20px
+    gap: 20px;
+    overflow: hidden;
   }
 
   .home-image {
@@ -840,6 +855,18 @@ body {
 
   .project-icon svg {
     width: 30px;
+  }
+
+  .contact-form .name {
+    flex-direction: column;
+  }
+
+  .contact-form .name input {
+    width: 100%;
+  }
+
+  .first-name {
+    margin-bottom: 30px !important;
   }
 
   .footer-container {
