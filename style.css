@@ -170,6 +170,11 @@ body {
   margin: 40px 0 60px;
 }
 
+.about-image,
+.social {
+  opacity: 0;
+}
+
 .about-image {
   width: 250px;
   height: 446px;
@@ -247,6 +252,13 @@ body {
   border: 1px solid silver;
   border-radius: 8px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .3);
+  opacity: 0;
+  transform: rotateY(-90deg);
+}
+
+.skill-card.animate {
+  opacity: 1;
+  transform: rotateY(0);
 }
 
 .skill-card svg {
@@ -262,10 +274,6 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   margin-top: 20px;
-}
-
-.project-btn {
-  text-align: center;
 }
 
 /* Projects */
@@ -288,6 +296,14 @@ body {
   width: 500px;
   margin-bottom: 15px;
   padding: 15px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-card.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-image-container {
@@ -350,6 +366,7 @@ body {
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .project-btn.github {
@@ -516,12 +533,19 @@ body {
   border: 1px solid white;
   border-radius: 50%;
   margin-right: 15px;
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+
+.footer-icon.animate {
+  opacity: 1;
+  transform: rotateX(0);
 }
 
 .footer-icon:hover {
   background-color: var(--secondary);
   border-color: var(--secondary);
-  transition: .5s;
+  transition: background-color 0.5s, border-color 0.5s;
 }
 
 .footer-icon svg {
@@ -736,7 +760,6 @@ body {
     justify-content: space-evenly;
     align-items: center;
     padding-bottom: 50px;
-    overflow: hidden;
   }
 
   .home-content {
@@ -790,20 +813,6 @@ body {
     font-size: 2rem;
   }
 
-  /* Contact */
-
-  .contact-form .name {
-    flex-direction: column;
-  }
-
-  .contact-form .name input {
-    width: 100%;
-  }
-
-  .first-name {
-    margin-bottom: 30px !important;
-  }
-
 }
 
 /* Mobile View */
@@ -853,21 +862,37 @@ body {
   }
 
   .skill-card {
-    width: 140px;
+    width: 130px;
   }
 
   .skill-card svg {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 
   .project-btn {
-    padding: 9px;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 1em;
   }
 
   .project-icon svg {
     width: 30px;
+  }
+
+  .coming-soon {
+    font-size: 2rem;
+  }
+
+  .contact-form .name {
+    flex-direction: column;
+  }
+
+  .contact-form .name input {
+    width: 100%;
+  }
+
+  .first-name {
+    margin-bottom: 30px !important;
   }
 
   .footer-container {
