@@ -113,13 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.style.display = "none";
     loadingBtn.style.display = "inline-flex";
 
-    // Simulasi pengiriman form selama 5 detik
     setTimeout(function () {
       loadingBtn.style.display = "none";
       submitBtn.style.display = "inline-flex";
       alert.style.display = "block";
       form.reset();
-    }, 5000); // Diubah menjadi 5000 ms (5 detik)
+    }, 5000);
   });
 
   closeBtn.addEventListener("click", function () {
