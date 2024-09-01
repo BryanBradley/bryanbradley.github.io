@@ -119,13 +119,19 @@ body {
 }
 
 .btn {
+  min-width: 150px;
+  height: 40px;
   color: white;
   background-color: var(--secondary);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 30px;
+  font-size: 1rem;
   border-radius: 50px;
-  text-decoration: none;
   transition: background-color .3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -449,6 +455,48 @@ body {
   color: rgba(0, 0, 0, .8)
 }
 
+.loading-btn {
+  display: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border: 3px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.alert {
+  color: #155724;
+  background-color: #D4EDDa;
+  display: none;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #C3E6CB;
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
 .garis {
   width: 90%;
   display: block;
@@ -618,6 +666,12 @@ body {
 .dark-mode .contact-form input::placeholder,
 .dark-mode .contact-form .message::placeholder {
   color: rgba(255, 255, 255, 0.8)
+}
+
+.dark-mode .alert {
+  color: whitesmoke;
+  background-color: #18181B;
+  border: none;
 }
 
 .dark-mode .garis {

@@ -88,3 +88,41 @@ function initializeAnimations() {
 
 window.addEventListener("load", initializeAnimations);
 window.addEventListener("scroll", initializeAnimations);
+
+// Submit Form to Google Sheets
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbzxTpnDDiE0kperFdtNqqJ3NEjZIWW7VTLdk2KrWc5auUXAkKCBAHDdlYha5Zlq0LNW/exec";
+const form = document.forms["portfolio-contact-form"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => console.log("Success!", response))
+    .catch((error) => console.error("Error!", error.message));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-form");
+  const submitBtn = document.querySelector(".submit-btn");
+  const loadingBtn = document.querySelector(".loading-btn");
+  const alert = document.querySelector(".alert");
+  const closeBtn = document.querySelector(".close-btn");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitBtn.style.display = "none";
+    loadingBtn.style.display = "inline-flex";
+
+    // Simulasi pengiriman form selama 5 detik
+    setTimeout(function () {
+      loadingBtn.style.display = "none";
+      submitBtn.style.display = "inline-flex";
+      alert.style.display = "block";
+      form.reset();
+    }, 5000); // Diubah menjadi 5000 ms (5 detik)
+  });
+
+  closeBtn.addEventListener("click", function () {
+    alert.style.display = "none";
+  });
+});

@@ -31,7 +31,7 @@
       <div class="home-content">
         <h1 class="home-title"><span class="highlight">Hi i'm</span><span class="nama"> Bryan Bradley</span></h1>
         <p class="home-description">Saya adalah seorang mahasiswa yang ingin menjadi seorang Fullstack Web Developer. Saya bertekad untuk terus belajar dan mengasah kemampuan saya dalam pengembangan web agar dapat membuat website yang responsif dan menarik.</p>
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#contact" class="btn">Contact Me</a>
       </div>
 
       <div class="home-image-container">
@@ -356,14 +356,19 @@
     <!-- Contact Start -->
     <section id="contact">
       <h1 class="section-heading">Contact <span class="highlight">Me</span></h1>
-      <form class="contact-form">
+      <form name="portfolio-contact-form" class="contact-form">
         <div class="name">
-          <input type="text" class="first-name" required placeholder="First Name" />
-          <input type="text" class="last-name" required placeholder="Last Name" />
+          <input type="text" name="firstName" class="first-name" placeholder="First Name" required />
+          <input type="text" name="lastName" class="last-name" placeholder="Last Name" required />
         </div>
-        <input type="email" required class="email" placeholder="Email" />
-        <textarea class="message" placeholder="Message" required></textarea>
-        <a href="" class="btn">Contact</a>
+        <input type="email" name="email" class="email" placeholder="Email" required />
+        <textarea name="message" class="message" placeholder="Message" required></textarea>
+        <div class="alert">
+          Pesan berhasil terkirim
+          <span class="close-btn">&times;</span>
+        </div>
+        <button type="submit" class="btn submit-btn">Kirim</button>
+        <button type="button" class="btn loading-btn" disabled><span class="spinner"></span>Loading...</button>
       </form>
     </section>
     <!-- Contact End -->
