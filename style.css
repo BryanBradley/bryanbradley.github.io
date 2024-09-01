@@ -130,6 +130,7 @@ body {
   font-size: 1rem;
   border-radius: 50px;
   transition: background-color .3s;
+  text-decoration: none;
   border: none;
   cursor: pointer;
 }
