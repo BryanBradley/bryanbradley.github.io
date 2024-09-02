@@ -35,25 +35,25 @@ darkModeToggle.addEventListener("click", () => {
 
 // AOS
 
-function isElementInViewport(el) {
+function isElementInViewport(el, offset = 0) {
   const rect = el.getBoundingClientRect();
-  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+  return rect.top < (window.innerHeight || document.documentElement.clientHeight) - offset && rect.bottom >= 0 && rect.left < (window.innerWidth || document.documentElement.clientWidth) && rect.right >= 0;
 }
 
-function animateElements(selector, duration = 500, delay = 100, property = "rotateX") {
+function animateElements(selector, duration = 500, delay = 100, property = "rotateX", offset = 100) {
   const elements = document.querySelectorAll(selector);
   elements.forEach((element, index) => {
-    if (isElementInViewport(element)) {
+    if (isElementInViewport(element, offset) && !element.classList.contains("animated")) {
       element.style.transition = `opacity ${duration}ms, transform ${duration}ms`;
       element.style.transitionDelay = `${index * delay}ms`;
-      element.classList.add("animate");
+      element.classList.add("animated", "animate");
     }
   });
 }
 
-function fadeAnimation(selector, direction, duration = 1000, delay = 0) {
+function fadeAnimation(selector, direction, duration = 1000, delay = 0, offset = 100) {
   const element = document.querySelector(selector);
-  if (isElementInViewport(element) && !element.classList.contains("animated")) {
+  if (isElementInViewport(element, offset) && !element.classList.contains("animated")) {
     element.style.opacity = "0";
     element.style.transform = direction === "right" ? "translateX(-50px)" : "translateX(50px)";
     element.style.transition = `opacity ${duration}ms, transform ${duration}ms`;
@@ -67,23 +67,24 @@ function fadeAnimation(selector, direction, duration = 1000, delay = 0) {
   }
 }
 
-function fadeUpAnimation(selector, duration = 500, delay = 100) {
+function fadeUpAnimation(selector, duration = 500, delay = 100, offset = 100) {
   const elements = document.querySelectorAll(selector);
   elements.forEach((element, index) => {
-    if (isElementInViewport(element) && !element.classList.contains("animate")) {
+    if (isElementInViewport(element, offset) && !element.classList.contains("animated")) {
       element.style.transition = `opacity ${duration}ms, transform ${duration}ms`;
       element.style.transitionDelay = `${index * delay}ms`;
-      element.classList.add("animate");
+      element.classList.add("animated", "animate");
     }
   });
 }
 
 function initializeAnimations() {
-  animateElements(".footer-icon", 800, 150, "rotateX");
-  animateElements(".skill-card", 500, 150, "rotateY");
-  fadeAnimation(".about-image", "right", 600);
-  fadeAnimation(".social", "left", 600);
-  fadeUpAnimation(".project-card", 500, 100);
+  animateElements(".footer-icon", 800, 150, "rotateX", 0);
+  fadeAnimation(".social", "left", 600, 0, 0);
+
+  animateElements(".skill-card", 500, 150, "rotateY", 100);
+  fadeAnimation(".about-image", "right", 1000, 0, 250);
+  fadeUpAnimation(".project-card", 1000, 100, 150);
 }
 
 window.addEventListener("load", initializeAnimations);
