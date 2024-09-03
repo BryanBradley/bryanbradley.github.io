@@ -162,6 +162,7 @@ body {
 
 #about {
   padding: 60px 10vw;
+  overflow: hidden;
 }
 
 .section-heading {
@@ -177,11 +178,6 @@ body {
   margin: 40px 0 60px;
 }
 
-.about-image,
-.social {
-  opacity: 0;
-}
-
 .about-image {
   width: 250px;
   height: 446px;
@@ -189,6 +185,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, .25);
 }
+
 
 .about-description {
   font-size: 1.1rem;
@@ -201,14 +198,12 @@ body {
   font-size: 2.3rem;
   font-weight: 500;
   margin-bottom: 10px;
-
 }
 
 .social {
   display: flex;
   align-items: center;
   gap: 20px;
-
 }
 
 .icon {
@@ -259,13 +254,6 @@ body {
   border: 1px solid silver;
   border-radius: 8px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .3);
-  opacity: 0;
-  transform: rotateY(-90deg);
-}
-
-.skill-card.animate {
-  opacity: 1;
-  transform: rotateY(0);
 }
 
 .skill-card svg {
@@ -285,10 +273,12 @@ body {
 
 /* Projects */
 
-#project,
-#contact {
+
+
+#project {
   position: relative;
   padding: 60px 10vw 0;
+  overflow: hidden;
 }
 
 .project-container {
@@ -303,14 +293,6 @@ body {
   width: 500px;
   margin-bottom: 15px;
   padding: 15px;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.project-card.animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .project-image-container {
@@ -410,6 +392,11 @@ body {
 }
 
 /* Contact */
+
+.contact-form {
+  position: relative;
+  padding: 60px 10vw 0;
+}
 
 .contact-form {
   width: 100%;
@@ -582,13 +569,6 @@ body {
   border: 1px solid white;
   border-radius: 50%;
   margin-right: 15px;
-  opacity: 0;
-  transform: rotateX(-90deg);
-}
-
-.footer-icon.animate {
-  opacity: 1;
-  transform: rotateX(0);
 }
 
 .footer-icon:hover {
