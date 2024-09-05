@@ -365,6 +365,18 @@ body {
   border: 1px solid black;
 }
 
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 15px 0 10px;
+}
+
+.project-description {
+  color: gray;
+  font-size: 1rem;
+  text-align: justify;
+}
+
 .coming-soon {
   color: white;
   font-size: 2.5rem;
@@ -894,6 +906,10 @@ body {
     height: 357px;
   }
 
+  .section-subheading {
+    font-size: 2.2rem;
+  }
+
   .skill-container {
     width: 250px;
   }
@@ -944,7 +960,7 @@ body {
 
   .footer-content {
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
   }
 
   .footer-icon svg {
