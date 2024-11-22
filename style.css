@@ -252,7 +252,7 @@ body {
   padding: 20px;
   border: 1px solid silver;
   border-radius: 8px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .3);
+  box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .3);
 }
 
 .skill-card svg {
@@ -614,6 +614,7 @@ body {
   color: var(--secondary);
 }
 
+
 .dark-mode .icon {
   fill: white;
   border: 1px solid white;
@@ -626,7 +627,7 @@ body {
 }
 
 .dark-mode .skill-card {
-  box-shadow: 5px 5px 5px 0 rgba(255, 255, 255, .3)
+  box-shadow: 3px 3px 3px 0 rgba(255, 255, 255, .3)
 }
 
 .dark-mode .project-image-container {
